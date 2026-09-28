@@ -4,7 +4,7 @@ import Main from "./components/Main";
 import Footer from "./components/Footer";
 import "./App.css";
 
-const API_KEY = import.meta.env.VITE_OPENWEATHER_KEY;
+const API_KEY = "72776c5b058fe846fb0173f27f88427f";
 
 function App() {
   const [cidade, setCidade] = useState("São Paulo");
