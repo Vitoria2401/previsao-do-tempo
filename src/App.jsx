@@ -20,9 +20,8 @@ function App() {
       setErro("");
 
       try {
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
-          cidade
-        )}&units=metric&lang=pt_br&appid=${API_KEY}`;
+      const url = `https://openweathermap.org{encodeURIComponent(cidade)}&units=metric&lang=pt_br&appid=${API_KEY}`;
+      
 
         const resposta = await fetch(url, { signal: controller.signal });
 
