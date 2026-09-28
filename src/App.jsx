@@ -20,8 +20,7 @@ function App() {
       setErro("");
 
       try {
-       const url = `https://openweathermap.org{encodeURIComponent(cidade)}&units=metric&lang=pt_br&appid=${API_KEY}`;
-
+        const url = `https://openweathermap.org{encodeURIComponent(cidade)}&units=metric&lang=pt_br&appid=${API_KEY}`;
 
         const resposta = await fetch(url, { signal: controller.signal });
 
@@ -36,13 +35,9 @@ function App() {
 
         setDados(null);
         if (e.message === "NAO_ENCONTRADA") {
-          setErro(
-            `Não encontramos "${cidade}". Confira o nome e tente de novo 😊`
-          );
+          setErro(`Não encontramos "${cidade}". Confira o nome e tente de novo 😊`);
         } else if (e.message === "CHAVE_INVALIDA") {
-          setErro(
-            "Chave da API inválida ou ainda não ativada. Novas chaves podem levar um tempinho."
-          );
+          setErro("Chave da API inválida ou ainda não ativada. Novas chaves podem levar um tempinho.");
         } else {
           setErro("Algo deu errado. Verifique sua internet e tente novamente.");
         }
@@ -53,7 +48,6 @@ function App() {
 
     buscarClima();
 
-    // cancela a busca anterior se o usuário pesquisar outra cidade rápido
     return () => controller.abort();
   }, [cidade]);
 
