@@ -4,8 +4,7 @@ import Main from "./components/Main";
 import Footer from "./components/Footer";
 import "./App.css";
 
-const API_KEY = "74e223f0de5cfd022996b89004187e78";
-
+const API_KEY = import.meta.env.VITE_OPENWEATHER_KEY;
 
 function App() {
   const [cidade, setCidade] = useState("São Paulo");
@@ -21,7 +20,9 @@ function App() {
       setErro("");
 
       try {
-        const url = `https://openweathermap.org{encodeURIComponent(cidade)}&units=metric&lang=pt_br&appid=${API_KEY}`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
+          cidade
+        )}&units=metric&lang=pt_br&appid=${API_KEY}`;
 
         const resposta = await fetch(url, { signal: controller.signal });
 
@@ -36,9 +37,13 @@ function App() {
 
         setDados(null);
         if (e.message === "NAO_ENCONTRADA") {
-          setErro(`Não encontramos "${cidade}". Confira o nome e tente de novo 😊`);
+          setErro(
+            `Não encontramos "${cidade}". Confira o nome e tente de novo 😊`
+          );
         } else if (e.message === "CHAVE_INVALIDA") {
-          setErro("Chave da API inválida ou ainda não ativada. Novas chaves podem levar um tempinho.");
+          setErro(
+            "Chave da API inválida ou ainda não ativada. Novas chaves podem levar um tempinho."
+          );
         } else {
           setErro("Algo deu errado. Verifique sua internet e tente novamente.");
         }
