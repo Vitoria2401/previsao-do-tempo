@@ -8,6 +8,7 @@ A leitura de dados meteorológicos puros por meio de gráficos de satélite comp
 ## 🎯 Objetivo da Aplicação
 Desenvolver um painel interativo, responsivo e de fácil compreensão que consome dados em tempo real de uma API pública para simplificar a consulta climática. O foco central é traduzir a resposta da API em recomendações úteis e amigáveis diretamente voltadas às atividades do dia a dia.
 
+
 ## 🛠️ Tecnologias Utilizadas
 * **React** (Biblioteca para construção da interface)
 * **Vite** (Ferramenta de build e ambiente de desenvolvimento rápido)
