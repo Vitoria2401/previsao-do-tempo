@@ -1,5 +1,7 @@
 # 🌤️ Painel ClimaSimples
 
+🔗 **Aplicação publicada:** https://previsao-do-tempo-ruby.vercel.app
+
 ## 💡 Problemática
 A leitura de dados meteorológicos puros por meio de gráficos de satélite complexos ou relatórios densos costuma ser confusa para o cidadão comum. Mães e pais, por exemplo, necessitam de informações práticas e diretas para planejar a rotina e os cuidados diários com seus filhos (como saber se precisam levar um agasalho ou um guarda-chuva), sem se deparar com termos técnicos incompreensíveis.
 
